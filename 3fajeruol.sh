@@ -17,9 +17,9 @@ echo "Etap 3: Ustawienie tabeli i łańcuchów"
 # Zastosuj nowe reguły nftables
 
 # Zdefiniuj zmienne, jeśli są potrzebne
-rpi="100.91.137.46"
-nlaptop="100.67.253.99"
-bpc="100.77.75.91"
+rpi="1.1.1.1"
+nlaptop="2.2.2.2"
+bpc="3.3.3.3"
 
 echo "Etap 3: Ustawienie tabeli i łańcuchów"
 
