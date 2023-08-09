@@ -18,7 +18,7 @@ iptables -A OUTPUT -p udp --dport 53 -j ACCEPT
 iptables -A INPUT -p udp --sport 53 -j ACCEPT
 
 # Lista adresów IP, które mają dostęp do SSH
-ALLOWED_IPS="100.77.75.91,100.67.253.99,100.91.137.46"
+ALLOWED_IPS="1.1.1.1,2.2.2.2,3.3.3.3"
 
 # Zezwól na ruch SSH dla dozwolonych adresów IP
 iptables -A INPUT -p tcp -m multiport --sports 22,1499 -s $ALLOWED_IPS -j ACCEPT
