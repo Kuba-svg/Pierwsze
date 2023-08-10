@@ -1,0 +1,27 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+
+<pre class="line-numbers">
+<code class="language-bash" id="myInput">
+
+HERE PASTE YOUR CODE!!!
+
+</code>
+</pre>
+
+<button onclick="myFunction()">Kopiuj</button>
+
+<script>
+function myFunction() {
+  var copyText = document.getElementById("myInput");
+  var textArea = document.createElement("textarea");
+  textArea.value = copyText.textContent;
+  document.body.appendChild(textArea);
+  textArea.select();
+  document.execCommand("Copy");
+  textArea.remove();
+  alert("Kod został skopiowany");
+}
+</script>
