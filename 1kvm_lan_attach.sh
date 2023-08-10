@@ -1,17 +1,14 @@
 !#/bin/bash
-systemctl stop NetworkManager.service
-systemctl disable NetworkManager.service
-systemctl disable systemd-networkd
 systemctl stop systemd-networkd
-ifconfig eth0 down
+systemctl disable systemd-networkd
 ip link set eth0 master br0
-ip addr add 192.168.10.5/16 dev br0 brd 192.168.255.255
-ip link set up eth0
-ip link set up br0
+ip addr add 192.168.10.3/16 dev br0 brd 192.168.255.255 ## You can add any IP. It is just temporary and it will change for your LAN IP later.
+ip link set up eth0 && ip link set up br0
 systemctl enable systemd-networkd
 systemctl start systemd-networkd
 
-#### Alternatively ####
+
+#### Alternatively create this files in followed directories. ####
 
 # file is /etc/systemd/network/br.netdev
 
@@ -22,7 +19,7 @@ systemctl start systemd-networkd
 # file is 1-br0-bind.network
 
 # [Match]
-# Name=eno1
+# Name=eth0
 
 # [Network]
 # Bridge=br0
@@ -36,4 +33,8 @@ systemctl start systemd-networkd
 # DHCP=ipv4
 
 # systemctl enable systemd-networkd
+
+# To go back to normal settings just switch on Network Manager
+# systemctl start NetworkManager
+# systemctl enable NetworkManager
 
